@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container">
+<div class='container'>
+    <div class>
+        <h2 class='section-heading text-uppercase'>Customers</h2>
+    </div>
+    <br>
+    <form name='form' method='post' action="{% url 'editDate' %}">
+        {% csrf_token %}
+        <input type='hidden' id='date_id' name='date_id' value='{{record.id}}'>
+
+        <label for='title'>Title:</label>
+        <input type='text' name='title' id='title' value='{{record.title}}' autofocus>
+        <br><br>
+
+        <label for='hours'>Duration:</label>
+        <input type='text' name='hours' id='hours' value='{{record.hours}}'>
+        <br><br>
+
+        <label for='cost'>Cost:</label>
+        <input type='text' name='cost' id='cost' value='{{record.cost}}'>
+        <br><br>
+
+        <label for='date'>Date:</label>
+        <input type='date' name='date' id='date' value='{{record.activity_date}}'>
+        <br><br>
+
+        <button type='submit'>Update Date</button>
+    </form>
+</header>
+</div>
+{% endblock %}

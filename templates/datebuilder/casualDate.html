@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container">
+<div class="container">
+    <h1> Some Casual Fun </h1>
+    <h4> Built for Laughs, Memories, and Adventures </h4>
+</div>
+{% comment %} <div class='container'>
+    <a class='btn btn-primary' href='{% url 'addDate' %}'>Add Date</a>
+</div> {% endcomment %}
+<br>
+<div class='container'>
+    {% for datetype in dates %}
+    <p>
+        <a class='btn btn-primary' href='{% url 'showSingleDate' date_id=datetype.id %}'>Edit</a>
+        {{ datetype.title }} - Cost: ${{ datetype.cost }} - Duration: {{ datetype.hours }} hours
+        <a class='btn btn-primary' href='{% url 'deleteDate' date_id=datetype.id %}'>Delete</a>
+    </p>    
+    {% endfor %}
+<div class='container'>
+    <a class='btn btn-primary' href='{% url 'showdates' %}'>Back</a>
+</div>
+</div>
+</header>
+<div>
+{% endblock %}

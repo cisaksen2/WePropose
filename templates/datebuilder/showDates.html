@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <h1> Choose the Date Style </h1> 
+                <h4> Something for Everyone </h4> <br>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'first' %}">First Date</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'casual' %}">Casual</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'outdoors' %}">Outdoors</a>
+                <br><br>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'fancy' %}">Fancy</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'spiritual' %}">Spiritual</a>
+                <br><br>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'proposal' %}">Proposal</a>
+            </div>
+        </header>
+{% endblock %}

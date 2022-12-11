@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<header class="masthead">
+    <div class="container">
+<div class='container'>
+    <div class>
+        <h2 class='section-heading text-uppercase'>Add Date</h2>
+    </div>
+    <br>
+    <form name='form' method='post' action="{% url 'addDate' %}">
+        {% csrf_token %}
+        <input type='hidden' id='date_id' name='date_id' value='{{record.id}}'>
+
+        <label for='title'>Title:</label>
+        <input type='text' name='title' id='title' autofocus>
+        <br><br>
+
+        <label for='hours'>Duration:</label>
+        <input type='text' name='hours' id='hours'>
+        <br><br>
+
+        <label for='cost'>Cost:</label>
+        <input type='text' name='cost' id='cost'>
+        <br><br>
+
+        <label for='date'>Date:</label>
+        <input type='date' name='date' id='date'>
+        <br><br>
+
+        <button type='submit'>Add Date</button>
+    </form>
+</header>
+</div>
+{% endblock %}
+        
